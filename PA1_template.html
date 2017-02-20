@@ -169,11 +169,8 @@ load.data &lt;- function(wd, lf = T, fu, fn, it = &quot;csv&quot;, uf = F, zf, .
 
         # return data.frame
         return(x)
-        
-        library(ezknitr)
-        ezknit(fig_dir = &quot;./figures&quot;)
-
-}
+        knitr::opts_chunk$set(echo = FALSE, fig.path = &quot;./figures/plot-&quot;, cache = TRUE)
+        }
 
 ## load the course data file
 activity &lt;- load.data(

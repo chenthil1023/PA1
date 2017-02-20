@@ -55,11 +55,8 @@ load.data <- function(wd, lf = T, fu, fn, it = "csv", uf = F, zf, ... ){
 
         # return data.frame
         return(x)
-        
-        library(ezknitr)
-        ezknit(fig_dir = "./figures")
-
-}
+        knitr::opts_chunk$set(echo = FALSE, fig.path = "./figures/plot-", cache = TRUE)
+        }
 
 ## load the course data file
 activity <- load.data(
